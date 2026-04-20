@@ -12,8 +12,8 @@ public class Salary {
     public Salary(){
 
     }
-    public Salary (Double annualSalary, Double annualServicesRevenue, Double annualCapitalGains,
-                   Double medicalExpenses, Double educationalExpenses){
+    public Salary (double annualSalary, double annualServicesRevenue, double annualCapitalGains,
+                   double medicalExpenses, double educationalExpenses){
         this.annualSalary = annualSalary;
         this.annualServicesRevenue = annualServicesRevenue;
         this.annualCapitalGains = annualCapitalGains;
@@ -62,14 +62,29 @@ public class Salary {
         this.educationalExpenses = educationalExpenses;
     }
 
+    //method
     public Double payrollTax(){
-        double tax;
+        double tax = 0.0;
         if (annualSalary < 12 * 3000){
             tax = annualSalary / 100 * 0;
         } else if (annualSalary < 12 * 5000){
             tax = annualSalary / 100 * 10;
         } else{
             tax = annualSalary / 100 * 20;
+        }
+        return tax;
+    }
+    public Double servicesTax(){
+        double tax = 0.0;
+        if(annualServicesRevenue > 0){
+            tax = annualServicesRevenue / 100 * 15;
+        }
+        return tax;
+    }
+    public Double capitalTax(){
+        double tax = 0.0;
+        if(annualCapitalGains > 0){
+            tax = annualCapitalGains / 100 * 20;
         }
         return tax;
     }
