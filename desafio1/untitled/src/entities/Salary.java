@@ -10,8 +10,8 @@ public class Salary {
 
     //constructors
     public Salary(){
-
     }
+
     public Salary (double annualSalary, double annualServicesRevenue, double annualCapitalGains,
                    double medicalExpenses, double educationalExpenses){
         this.annualSalary = annualSalary;
@@ -64,7 +64,7 @@ public class Salary {
 
     //method
     public Double payrollTax(){
-        double tax = 0.0;
+        double tax;
         if (annualSalary < 12 * 3000){
             tax = annualSalary / 100 * 0;
         } else if (annualSalary < 12 * 5000){
@@ -74,18 +74,40 @@ public class Salary {
         }
         return tax;
     }
-    public Double servicesTax(){
-        double tax = 0.0;
-        if(annualServicesRevenue > 0){
-            tax = annualServicesRevenue / 100 * 15;
-        }
-        return tax;
+    public double servicesTax() {
+        return annualServicesRevenue * 0.15;
     }
-    public Double capitalTax(){
-        double tax = 0.0;
-        if(annualCapitalGains > 0){
-            tax = annualCapitalGains / 100 * 20;
-        }
-        return tax;
+    public double capitalTax() {
+        return annualCapitalGains * 0.20;
+    }
+    public double grossTax() {
+        return payrollTax() + servicesTax() + capitalTax();
+    }
+    public double maxDeductible() {
+        return grossTax() * 0.30;
+    }
+    public double deductibleExpenses() {
+        return medicalExpenses + educationalExpenses;
+    }
+    public double taxRebate() {
+        return Math.min(maxDeductible(), deductibleExpenses());
+    }
+    public double netTax() {
+        return grossTax() - taxRebate();
+    }
+    public String toString() {
+        return "\nRELATÓRIO DE IMPOSTO DE RENDA\n"
+                + "\nCONSOLIDADO DE RENDA:\n"
+                + String.format("Imposto sobre salário: %.2f%n", payrollTax())
+                + String.format("Imposto sobre serviços: %.2f%n", servicesTax())
+                + String.format("Imposto sobre ganho de capital: %.2f%n", capitalTax())
+                + "\nDEDUÇÕES:\n"
+                + String.format("Máximo dedutível: %.2f%n", maxDeductible())
+                + String.format("Gastos dedutíveis: %.2f%n", deductibleExpenses())
+                + "\nRESUMO:\n"
+                + String.format("Imposto bruto total: %.2f%n", grossTax())
+                + String.format("Abatimento: %.2f%n", taxRebate())
+                + String.format("Imposto devido: %.2f%n", netTax());
     }
 }
+

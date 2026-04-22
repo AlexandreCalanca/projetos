@@ -27,14 +27,7 @@ public class Main {
         System.out.printf("Imposto sobre servço: %.2f%n", p1.servicesTax());
         System.out.printf("Imposto sobre ganho de capital: %.2f%n", p1.capitalTax());
 
-        System.out.printf("%nDEDUÇÕES:%n");
-        System.out.printf("Máximo dedutível: %.2f%n");
-        System.out.printf("Gastos dedutíveis: %.2f%n");
-
-        System.out.printf("%nRESUMO%n");
-        System.out.printf("Imposto bruto total: %.2f%n");
-        System.out.printf("Abatimento: %.2f%n");
-        System.out.printf("Imposto devido: %.2f%n");
+        System.out.println(p1);
 
         sc.close();
     }
