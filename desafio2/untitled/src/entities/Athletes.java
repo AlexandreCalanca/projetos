@@ -18,17 +18,10 @@ public class Athletes {
 
     //getters and setters
 
+    public String getName() {
+        return name;
+    }
+
     //methods
-    public Double averageWeight(){
-        return ;
-    }
-    public String tallestAthlete(){
-        return ;
-    }
-    public Double percentageOfMen(){
-        return ;
-    }
-    public Double averageFemaleHeight(){
-        return ;
-    }
+
 }
