@@ -36,7 +36,7 @@ public class Main {
                 System.out.print("Valor invalido! Favor digitar um valor positivo: ");
                 weight = sc.nextDouble();
             }
-            
+
             Athlete[i] = new Athletes(name, gender, height, weight);
         }
         for (int i = 0; i < Athlete.length; i++){
