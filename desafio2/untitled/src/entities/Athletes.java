@@ -1,27 +1,39 @@
 package entities;
 
 public class Athletes {
+    //Atributes
     private String name;
     private Character gender;
     private Double height;
-    private Double weigth;
+    private Double weight;
 
-    //constructor
-    public Athletes(){
+
+    //Constructor
+    public Athletes() {
     }
-    public Athletes(String name, Character gender, Double height, Double weight){
+
+    public Athletes(String name, Character gender, Double height, Double weight) {
         this.name = name;
         this.gender = gender;
         this.height = height;
-        this.weigth = weight;
+        this.weight = weight;
     }
 
-    //getters and setters
+    //getter
 
     public String getName() {
         return name;
     }
 
-    //methods
+    public Character getGender() {
+        return gender;
+    }
 
+    public Double getHeight() {
+        return height;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
 }
