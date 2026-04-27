@@ -61,7 +61,7 @@ public class Main {
                 .filter(a -> a.getGender() == 'F')
                 .mapToDouble(Athletes::getHeight)
                 .average()
-                .orElse(0.0);
+                .orElseThrow(() -> new RuntimeException("Não há mulheres cadastradas"));
 
         System.out.println("RELATÓRIO: ");
         System.out.printf("Peso médio dos atletas: %.2f%n", averageWeight);
