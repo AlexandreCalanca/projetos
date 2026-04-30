@@ -12,18 +12,23 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        List<Bill> bill = new ArrayList<>();
+        List<Bill> bills = new ArrayList<>();
 
         System.out.print("Sexo: ");
-        Character gender = sc.next().charAt(0);
-        System.out.print("Quantidade de cervejas: ");
-        Integer quantBeer = sc.nextInt();
-        System.out.print("Quantidade de refrigerantes: ");
-        Integer quantSoftDrink = sc.nextInt();
-        System.out.print("Quantidade de espetinhos: ");
-        Integer quantBarbecue = sc.nextInt();
+        char gender = sc.next().charAt(0);
 
-        bill.add(new Bill(gender, quantBeer, quantSoftDrink, quantBarbecue));
+        System.out.print("Quantidade de cervejas: ");
+        int quantBeer = sc.nextInt();
+
+        System.out.print("Quantidade de refrigerantes: ");
+        int quantSoftDrink = sc.nextInt();
+
+        System.out.print("Quantidade de espetinhos: ");
+        int quantBarbecue = sc.nextInt();
+
+        bills.add(new Bill(gender, quantBeer, quantSoftDrink, quantBarbecue));
+
+
 
         sc.close();
     }
