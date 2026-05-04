@@ -40,7 +40,7 @@ public class Bill {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("RELATÓRIO:\n");
+        sb.append("\nRELATÓRIO:\n");
         sb.append(String.format("Consumo = R$ %.2f%n", consumption()));
 
         if (couver() == 0.0) {

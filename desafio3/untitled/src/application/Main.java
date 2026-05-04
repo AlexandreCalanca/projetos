@@ -28,7 +28,7 @@ public class Main {
 
         bills.add(new Bill(gender, quantBeer, quantSoftDrink, quantBarbecue));
 
-
+        System.out.printf(bills.toString());
 
         sc.close();
     }
