@@ -25,6 +25,16 @@ public class Main {
             Integer armor = sc.nextInt();
             champions.add(new Champion(name, life, attack, armor));
         }
+        System.out.print("Quantos turnos deseja executar? ");
+        int n = sc.nextInt();
+        for(int i = 0; i < n; i++){
+            System.out.printf("Resultado do turno %d:", i);
+            System.out.printf("%s: %d de vida", champions.get(0).getName()
+            );
+            System.out.printf("%s %d de vida: ",champions.get(1).getName()
+            );
+        }
+
         sc.close();
     }
 }
